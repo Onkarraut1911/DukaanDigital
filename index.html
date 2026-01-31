@@ -2,35 +2,58 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Basic Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DukaanDigital | Aapki Digital Dukan</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
+    <meta name="description"
+        content="DukaanDigital helps local shops go online with beautiful, fast, and affordable websites. Aapki Digital Dukan, ab online!" />
+    <meta name="keywords"
+        content="DukaanDigital, digital shop, website for shop, local business website, online store India" />
+    <meta name="author" content="DukaanDigital Team" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon3.png">
 
+    <!-- Open Graph -->
+    <meta property="og:title" content="DukaanDigital | Aapki Digital Dukan">
+    <meta property="og:description"
+        content="Har local dukan ko online lane ka smart solution. Fast, affordable, professional websites.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/preview.png">
+    <meta property="og:url" content="https://dukaandigital.in">
+
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Poppins:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Rozha+One&family=Kalam:wght@300;400;700&display=swap"
         rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind Config (must be before CDN) -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        'hindi': ['Kalam', 'cursive'],  // Handwriting font
-                        'english': ['Poppins', 'sans-serif'] // Numbers/Technical text
+                        hindi: ['Kalam', 'cursive'],
+                        english: ['Poppins', 'sans-serif'],
+                        logo: ['Rozha One', 'serif']
                     },
                     colors: {
                         brand: {
                             50: '#fff7ed',
                             100: '#ffedd5',
-                            500: '#f97316', // Orange
+                            500: '#f97316',
                             600: '#ea580c',
                             900: '#7c2d12',
                         }
@@ -40,409 +63,594 @@
         }
     </script>
 
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Global Styles -->
     <style>
-        /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Handwriting Text ko thoda bada dikhana padta hai */
-        .hand-text {
-            line-height: 1.6;
+        .navlink {
+            position: relative;
+            transition: color .3s;
         }
 
-        /* Floating WhatsApp Button Animation */
-        .float-wa {
-            animation: bounce 2s infinite;
+        .navlink::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0%;
+            height: 2px;
+            background: #f97316;
+            transition: width .3s ease;
         }
 
-        @keyframes bounce {
+        .navlink:hover {
+            color: #f97316;
+        }
+
+        .navlink:hover::after {
+            width: 100%;
+        }
+
+        @keyframes float {
 
             0%,
-            20%,
-            50%,
-            80%,
             100% {
-                transform: translateY(0);
+                transform: translateY(0px);
             }
 
-            40% {
-                transform: translateY(-10px);
-            }
-
-            60% {
-                transform: translateY(-5px);
+            50% {
+                transform: translateY(-20px);
             }
         }
     </style>
 </head>
 
+
+
+
 <body class="bg-brand-50 font-english text-gray-800">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Rozha+One&display=swap" rel="stylesheet<!-- Google Font -->
 
 
-<nav class=" sticky top-0 z-50 backdrop-blur-xl bg-white/70 border-b border-orange-100 shadow-md">
-    <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <nav id="navbar"
+        class="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/60 border-b border-orange-100 transition-all duration-500">
 
-        <!-- Logo + Brand -->
-        <div class="flex items-center gap-3 group cursor-pointer">
-            <div
-                class="bg-gradient-to-r from-orange-500 to-yellow-400 p-3 rounded-xl shadow-lg group-hover:scale-105 transition duration-300">
-                <i class="fa-solid fa-store text-white text-2xl"></i>
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-full overflow-hidden shadow-lg
+      group-hover:scale-110 transition duration-300">
+                    <img src="favicon3.png" class="w-full h-full object-cover">
+                </div>
+
+                <div class="leading-tight">
+                    <h1 class="text-xl md:text-2xl font-bold text-orange-600 tracking-wide"
+                        style="font-family: 'Rozha One', serif;">
+                        दुकानडिजिटल
+                    </h1>
+                    <p class="text-[10px] tracking-widest text-gray-500 font-semibold uppercase hidden sm:block">
+                        Google Par Apni Dukan Dikhayein
+                    </p>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 font-semibold text-gray-700">
+                <a href="index.html" class="navlink">Home</a>
+                <a href="About.html" class="navlink">About</a>
+                <a href="services.html" class="navlink">Services</a>
+                <a href="plans.html" class="navlink">Plans/Pricing</a>
+                <a href="contact.html" class="navlink">Contact</a>
             </div>
 
-            <div class="leading-tight">
-                <h1 class="text-2xl md:text-3xl font-bold text-orange-600 tracking-wide"
-                    style="font-family: 'Rozha One', serif;">
-                    दुकानडिजिटल
-                </h1>
-                <p class="text-[11px] tracking-widest text-gray-500 font-semibold uppercase">
-                    Google Par Apni Dukan Dikhayein
-                </p>
+            <!-- CTA + Hamburger -->
+            <div class="flex items-center gap-3">
+                <a href="tel:9404359821" class="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-white
+         bg-gradient-to-r from-orange-500 to-yellow-500
+         shadow-lg hover:shadow-orange-300 hover:scale-105 transition-all duration-300">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    अभी कॉल करें
+                </a>
+
+                <button id="menuBtn" class="md:hidden text-2xl text-orange-600 transition">
+                    <i id="menuIcon" class="fa-solid fa-bars"></i>
+                </button>
             </div>
+
         </div>
 
-        <!-- CTA Button -->
-        <a href="tel:9404359821" class="relative inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold text-white
-                   bg-gradient-to-r from-orange-500 to-yellow-500
-                   hover:from-orange-600 hover:to-yellow-600
-                   shadow-xl shadow-orange-200
-                   transition-all duration-300 active:scale-95">
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl
+     shadow-2xl border-t border-orange-100
+     flex flex-col px-6 py-6 space-y-3
+     font-semibold text-gray-700
+     transform -translate-y-6 opacity-0 pointer-events-none
+     transition-all duration-500 ease-in-out">
 
-            <span class="absolute inset-0 rounded-full bg-white opacity-10 blur-md animate-pulse"></span>
 
-            <i class="fa-solid fa-phone-volume text-lg"></i>
-            <span class="relative z-10 text-sm md:text-base">अभी कॉल करें</span>
-        </a>
+            <!-- Links -->
+            <a href="index.html" class="block px-4 py-3 rounded-lg hover:bg-orange-50 hover:text-orange-600 transition">
+                Home
+            </a>
 
-    </div>
+            <a href="About.html" class="block px-4 py-3 rounded-lg hover:bg-orange-50 hover:text-orange-600 transition">
+                About
+            </a>
+
+            <a href="services.html"
+                class="block px-4 py-3 rounded-lg hover:bg-orange-50 hover:text-orange-600 transition">
+                Services
+            </a>
+
+            <a href="plans.html" class="block px-4 py-3 rounded-lg hover:bg-orange-50 hover:text-orange-600 transition">
+                Plans / Pricing
+            </a>
+
+            <a href="contact.html"
+                class="block px-4 py-3 rounded-lg hover:bg-orange-50 hover:text-orange-600 transition">
+                Contact
+            </a>
+
+            <!-- Divider -->
+            <div class="border-t border-gray-200 my-2"></div>
+
+            <!-- CTA -->
+            <a href="tel:9404359821" class="flex items-center justify-center gap-2 mt-2 px-5 py-3
+     rounded-full font-bold text-white
+     bg-gradient-to-r from-orange-500 to-yellow-500
+     shadow-lg hover:scale-105 transition-all duration-300">
+                <i class="fa-solid fa-phone-volume"></i>
+                अभी कॉल करें
+            </a>
+        </div>
+
     </nav>
 
+
+
     <section
-        class="relative bg-gradient-to-br from-orange-500 via-orange-600 to-red-600 text-white py-20 lg:py-32 overflow-hidden">
+        class="relative bg-gradient-to-br from-orange-600 via-orange-500 to-red-600 text-white pt-28 pb-36 overflow-hidden">
 
-        <!-- Background effects -->
-        <div class="absolute inset-0 opacity-10"
-            style="background-image: radial-gradient(#fff 2px, transparent 2px); background-size: 40px 40px;"></div>
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-        <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-yellow-400/20 rounded-full blur-3xl"></div>
+        <!-- Animated background dots -->
+        <div class="absolute inset-0 opacity-10 animate-pulse"
+            style="background-image: radial-gradient(#ffffff 2px, transparent 2px); background-size: 38px 38px;"></div>
 
-        <div class="max-w-6xl mx-auto px-6 relative z-10">
-            <div class="text-center">
-
-                <!-- Offer badge -->
-                <div
-                    class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 text-white px-4 py-1.5 rounded-full text-sm font-bold mb-6 animate-bounce">
-                    <span class="bg-yellow-400 text-orange-900 px-2 py-0.5 rounded-full text-xs">OFFER</span>
-                    सिर्फ ₹499/महीना से शुरू
-                </div>
-
-                <!-- Main headline -->
-                <h1 class="font-hindi text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
-                    अब अपनी दुकान को Google पर लाएं <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-yellow-400">
-                        सिर्फ एक Pizza के दाम में!
-                    </span>
-                </h1>
-
-                <!-- Sub headline -->
-                <p class="max-w-3xl mx-auto text-lg md:text-2xl mb-6 text-orange-50 font-medium leading-relaxed">
-                    Website बनवाने का ₹15,000 क्यों खर्च करना? <br>
-                    अब <span class="bg-orange-700/30 px-2 rounded font-bold">किराये पर वेबसाइट</span> लें।
-                </p>
-
-                <!-- Punch line -->
-                <p class="text-2xl md:text-3xl font-bold mb-10 text-yellow-200">
-                    "आज बनेगी, आज ही Live होगी"
-                </p>
-
-                <!-- Buttons -->
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-5">
-                    <a href="https://wa.me/919404359821?text=नमस्ते, मुझे अपनी दुकान के लिए वेबसाइट बनवानी है"
-                        class="group w-full sm:w-auto bg-[#25D366] hover:bg-[#128C7E] text-white font-bold text-xl px-10 py-4 rounded-2xl shadow-2xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
-                        <i class="fa-brands fa-whatsapp text-3xl"></i>
-                        व्हाट्सएप पर बात करें
-                    </a>
-
-                    <a href="#plans"
-                        class="group w-full sm:w-auto bg-white text-orange-600 hover:bg-orange-50 font-bold text-xl px-10 py-4 rounded-2xl shadow-xl transition-all flex items-center justify-center">
-                        प्लान्स देखें
-                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-                <!-- Trust points -->
-                <div class="mt-12 flex items-center justify-center gap-6 text-orange-100/90 text-sm font-medium">
-                    <div class="flex items-center gap-1">
-                        <i class="fa-solid fa-check-circle text-yellow-300"></i> सेटअप फ्री
-                    </div>
-                    <div class="flex items-center gap-1">
-                        <i class="fa-solid fa-check-circle text-yellow-300"></i> लो-मेंटेनेंस
-                    </div>
-                    <div class="flex items-center gap-1">
-                        <i class="fa-solid fa-check-circle text-yellow-300"></i> 24/7 सपोर्ट
-                    </div>
-                </div>
-
-            </div>
+        <!-- Floating Glow Orbs -->
+        <div
+            class="absolute -top-32 -right-32 w-[28rem] h-[28rem] bg-white/10 rounded-full blur-3xl animate-[float_8s_ease-in-out_infinite]">
+        </div>
+        <div
+            class="absolute -bottom-28 -left-28 w-[22rem] h-[22rem] bg-yellow-300/20 rounded-full blur-3xl animate-[float_10s_ease-in-out_infinite]">
         </div>
 
-        <!-- Bottom wave -->
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none transform translate-y-1">
-            <svg class="relative block w-full h-12 md:h-24" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path
-                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                    fill="#ffffff"></path>
+        <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
+
+            <!-- Offer Badge -->
+            <div data-aos="fade-down"
+                class="inline-flex items-center gap-3 bg-white/15 border border-white/30 backdrop-blur-md px-6 py-2 rounded-full text-sm font-bold mb-10 shadow-lg">
+                <span class="bg-yellow-400 text-orange-900 px-3 py-1 rounded-full text-xs">LIMITED OFFER</span>
+                सिर्फ ₹499/महीना • सेटअप बिल्कुल फ्री
+            </div>
+
+            <!-- Main Headline -->
+            <h1 data-aos="fade-up"
+                class="font-hindi text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-6">
+                अपनी दुकान को <span class="text-yellow-300">Google</span> पर लाओ
+            </h1>
+
+            <!-- Power Line -->
+            <h2 data-aos="fade-up" data-aos-delay="150"
+                class="text-2xl md:text-4xl lg:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 via-white to-yellow-300 mb-8">
+                Professional website बनाओ, नए ग्राहक पाओ
+            </h2>
+
+            <!-- Supporting Text -->
+            <p data-aos="fade-up" data-aos-delay="250"
+                class="max-w-3xl mx-auto text-lg md:text-2xl text-orange-50 font-medium leading-relaxed mb-8">
+                ₹15,000 खर्च करके website बनवाने की जरूरत नहीं। <br>
+                अब <span class="bg-white/20 px-2 py-1 rounded font-bold">किराये पर website</span> लें —
+                सिर्फ एक Pizza के दाम में।
+            </p>
+
+            <!-- Punch Line -->
+            <p data-aos="fade-up" data-aos-delay="350"
+                class="text-xl md:text-2xl font-semibold text-yellow-100 mb-12 tracking-wide">
+                आज बनेगी • आज ही Live होगी • तुरंत ग्राहक मिलेंगे
+            </p>
+
+            <!-- CTA Buttons -->
+            <div data-aos="zoom-in" data-aos-delay="450"
+                class="flex flex-col sm:flex-row justify-center items-center gap-6">
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+
+                    <!-- WhatsApp CTA -->
+                    <a href="https://wa.me/919404359821?text=नमस्ते, मुझे अपनी दुकान के लिए वेबसाइट बनवानी है" class="group inline-flex items-center justify-center gap-3
+     w-full sm:w-auto px-10 py-4 rounded-2xl
+     bg-[#25D366] text-white font-bold text-lg
+     shadow-xl transition-all duration-300
+     hover:-translate-y-1 hover:shadow-2xl
+     hover:bg-orange-600">
+
+                        <i class="fa-brands fa-whatsapp text-2xl transition-transform group-hover:scale-110"></i>
+                        <span>व्हाट्सएप पर बात करें</span>
+                    </a>
+
+                    <!-- Plans CTA -->
+                    <a href="plans.html" class="group inline-flex items-center justify-center gap-2
+     w-full sm:w-auto px-10 py-4 rounded-2xl
+     bg-white text-orange-600 font-bold text-lg
+     border border-orange-200 shadow-lg
+     transition-all duration-300
+     hover:-translate-y-1 hover:shadow-2xl
+     hover:bg-orange-600 hover:text-white">
+
+                        <span>प्लान्स देखें</span>
+                        <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                    </a>
+
+                </div>
+
+
+            </div>
+
+            <!-- Trust Row -->
+            <div data-aos="fade-up" data-aos-delay="600"
+                class="mt-16 flex flex-wrap items-center justify-center gap-8 text-orange-100/90 text-sm md:text-base font-medium">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-yellow-300"></i> सेटअप फ्री
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-yellow-300"></i> कोई टेक्निकल झंझट नहीं
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-yellow-300"></i> 24/7 सपोर्ट
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-yellow-300"></i> Google पर दिखेगी आपकी दुकान
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Premium Bottom Wave -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-20 md:h-32" viewBox="0 0 1200 120" preserveAspectRatio="none">
+
+                <!-- Back soft layer -->
+                <path d="M0,40 C300,120 900,0 1200,60 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.25)">
+                </path>
+
+                <!-- Main wave -->
+                <path d="M0,60 C300,0 900,120 1200,50 L1200,120 L0,120 Z" fill="#ffffff">
+                    <animate attributeName="d" dur="8s" repeatCount="indefinite" values="
+        M0,60 C300,0 900,120 1200,50 L1200,120 L0,120 Z;
+        M0,50 C300,120 900,0 1200,60 L1200,120 L0,120 Z;
+        M0,60 C300,0 900,120 1200,50 L1200,120 L0,120 Z">
+                    </animate>
+                </path>
+
             </svg>
         </div>
 
     </section>
 
 
-    <section class="py-20 bg-gray-50/50 relative overflow-hidden">
-        <div
-            class="absolute top-0 left-0 w-64 h-64 bg-brand-100/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2">
-        </div>
 
-        <div class="max-w-6xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="font-hindi text-4xl md:text-5xl font-extrabold mb-6 text-brand-900 tracking-tight">
+
+    <section class="py-24 bg-gradient-to-b from-gray-50 to-white relative">
+
+        <div class="max-w-6xl mx-auto px-6">
+
+            <!-- Heading -->
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="font-hindi text-4xl md:text-5xl font-extrabold text-brand-900 mb-6">
                     दुकानडिजिटल ही क्यों चुनें?
                 </h2>
+
                 <p class="font-hindi text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    आज के ज़माने में ग्राहक आपको फोन पर ढूँढता है। अगर आप ऑनलाइन नहीं हैं, तो आप अपना बिजनेस खो रहे हैं।
-                    <span class="text-brand-600 font-bold">हम आपको ऑनलाइन लाते हैं, वह भी सबसे आसान तरीके से:</span>
+                    आज ग्राहक पहले Google पर सर्च करता है, फिर दुकान पर आता है।
+                    अगर आप ऑनलाइन नहीं हैं, तो आप रोज़ ग्राहक खो रहे हैं।
+                    <span class="text-brand-600 font-bold">
+                        हम आपकी दुकान को ऑनलाइन पहचान दिलाते हैं — आसान, तेज़ और किफायती तरीके से।
+                    </span>
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-10">
+            <!-- Cards -->
+            <div class="grid md:grid-cols-3 gap-12">
 
-                <div
-                    class="group bg-white p-8 rounded-[2rem] shadow-xl shadow-gray-200/50 border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-orange-200/40">
-                    <div
-                        class="bg-gradient-to-br from-orange-400 to-orange-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-orange-200 transform group-hover:rotate-6 transition-transform">
-                        <i class="fa-brands fa-google text-white text-3xl"></i>
+                <!-- Card -->
+                <div data-aos="fade-up" data-aos-delay="100" class="group bg-white p-10 rounded-[2.5rem] border border-orange-100
+        shadow-[0_10px_40px_rgba(249,115,22,0.15)]
+        hover:shadow-[0_20px_60px_rgba(249,115,22,0.25)]
+        transition-all duration-500 hover:-translate-y-3 text-center">
+
+                    <!-- Icon Center -->
+                    <div class="mx-auto mb-8 w-20 h-20 rounded-3xl
+          bg-gradient-to-br from-orange-400 to-orange-600
+          flex items-center justify-center
+          shadow-[0_10px_25px_rgba(249,115,22,0.4)]">
+
+                        <i class="fa-brands fa-google text-white text-4xl"></i>
                     </div>
-                    <h3 class="font-hindi text-2xl font-bold mb-3 text-gray-800">गूगल पर अपनी पहचान</h3>
-                    <p class="font-hindi text-gray-600 leading-relaxed">
-                        जब भी कोई आपके शहर में आपका काम सर्च करेगा, आपकी दुकान की जानकारी सबसे पहले सामने आएगी।
+
+                    <h3 class="font-hindi text-2xl font-bold mb-4 text-gray-800">
+                        Google पर आपकी पहचान
+                    </h3>
+
+                    <p class="font-hindi text-gray-600 leading-relaxed text-lg">
+                        जब भी कोई आपके शहर में आपके काम से जुड़ा सर्च करेगा,
+                        आपकी दुकान की जानकारी सबसे पहले दिखेगी।
                     </p>
                 </div>
 
-                <div
-                    class="group bg-white p-8 rounded-[2rem] shadow-xl shadow-gray-200/50 border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-green-200/40">
-                    <div
-                        class="bg-gradient-to-br from-green-400 to-green-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-200 transform group-hover:-rotate-6 transition-transform">
-                        <i class="fa-brands fa-whatsapp text-white text-3xl"></i>
+                <!-- Card -->
+                <div data-aos="fade-up" data-aos-delay="250" class="group bg-white p-10 rounded-[2.5rem] border border-orange-100
+        shadow-[0_10px_40px_rgba(249,115,22,0.15)]
+        hover:shadow-[0_20px_60px_rgba(249,115,22,0.25)]
+        transition-all duration-500 hover:-translate-y-3 text-center">
+
+                    <div class="mx-auto mb-8 w-20 h-20 rounded-3xl
+          bg-gradient-to-br from-orange-400 to-orange-600
+          flex items-center justify-center
+          shadow-[0_10px_25px_rgba(249,115,22,0.4)]">
+
+                        <i class="fa-brands fa-whatsapp text-white text-4xl"></i>
                     </div>
-                    <h3 class="font-hindi text-2xl font-bold mb-3 text-gray-800">सीधे व्हाट्सएप ऑर्डर</h3>
-                    <p class="font-hindi text-gray-600 leading-relaxed">
-                        बिना किसी झंझट के, ग्राहक सीधे आपकी वेबसाइट से सामान पसंद करेगा और आपको व्हाट्सएप पर मैसेज
-                        भेजेगा।
+
+                    <h3 class="font-hindi text-2xl font-bold mb-4 text-gray-800">
+                        सीधे व्हाट्सएप ऑर्डर
+                    </h3>
+
+                    <p class="font-hindi text-gray-600 leading-relaxed text-lg">
+                        ग्राहक आपकी वेबसाइट से सामान देखेगा और
+                        सीधे आपको व्हाट्सएप पर मैसेज भेजेगा — बिना किसी ऐप के।
                     </p>
                 </div>
 
-                <div
-                    class="group bg-white p-8 rounded-[2rem] shadow-xl shadow-gray-200/50 border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-200/40">
-                    <div
-                        class="bg-gradient-to-br from-blue-400 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-200 transform group-hover:rotate-6 transition-transform">
-                        <i class="fa-solid fa-rocket text-white text-3xl"></i>
+                <!-- Card -->
+                <div data-aos="fade-up" data-aos-delay="400" class="group bg-white p-10 rounded-[2.5rem] border border-orange-100
+        shadow-[0_10px_40px_rgba(249,115,22,0.15)]
+        hover:shadow-[0_20px_60px_rgba(249,115,22,0.25)]
+        transition-all duration-500 hover:-translate-y-3 text-center">
+
+                    <div class="mx-auto mb-8 w-20 h-20 rounded-3xl
+          bg-gradient-to-br from-orange-400 to-orange-600
+          flex items-center justify-center
+          shadow-[0_10px_25px_rgba(249,115,22,0.4)]">
+
+                        <i class="fa-solid fa-rocket text-white text-4xl"></i>
                     </div>
-                    <h3 class="font-hindi text-2xl font-bold mb-3 text-gray-800">किफायती और तेज़</h3>
-                    <p class="font-hindi text-gray-600 leading-relaxed">
-                        एक चाय या नाश्ते के रोज़ाना खर्च से भी कम में आपकी वेबसाइट तैयार। कोई भारी भरकम खर्चा नहीं।
+
+                    <h3 class="font-hindi text-2xl font-bold mb-4 text-gray-800">
+                        तेज़, आसान और किफायती
+                    </h3>
+
+                    <p class="font-hindi text-gray-600 leading-relaxed text-lg">
+                        रोज़ की चाय से भी कम खर्च में आपकी वेबसाइट तैयार।
+                        कोई बड़ा निवेश नहीं, कोई टेक्निकल झंझट नहीं।
                     </p>
                 </div>
 
             </div>
 
-            <div class="mt-16 text-center">
-                <div class="inline-block bg-brand-50 border border-brand-100 px-6 py-3 rounded-full">
-                    <p class="font-hindi text-brand-800 font-medium">
-                        <i class="fa-solid fa-shield-halved mr-2 text-brand-600"></i>
-                        100+ स्थानीय व्यापारियों का भरोसा हमारे साथ है
-                    </p>
-                </div>
-            </div>
         </div>
     </section>
 
-    <section id="plans" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="font-hindi text-4xl md:text-5xl font-extrabold text-brand-900 mb-4">किराये के आसान प्लान्स
+
+    <section class="py-24 bg-gradient-to-b from-orange-50 to-white relative overflow-hidden">
+
+        <!-- Soft orange glows -->
+        <div class="absolute -top-20 -left-20 w-72 h-72 bg-orange-200/30 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-72 h-72 bg-yellow-200/30 rounded-full blur-3xl"></div>
+
+        <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+
+            <!-- Heading -->
+            <div data-aos="fade-up">
+                <h2 class="font-hindi text-4xl md:text-5xl font-extrabold text-orange-600 mb-6">
+                    आपके बिजनेस के लिए सही प्लान
                 </h2>
-                <p class="font-hindi text-xl text-gray-600">वो चुनें जो आपके बिजनेस के लिए सही है। कोई हिडन चार्ज नहीं।
+                <p class="font-hindi text-lg text-gray-600 mb-16">
+                    अपनी जरूरत के हिसाब से प्लान चुनें — आसान, सस्ता और असरदार।
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+            <!-- Cards -->
+            <div class="grid md:grid-cols-3 gap-10 items-stretch">
 
-                <div
-                    class="group border-2 border-gray-100 p-8 rounded-[2rem] hover:border-brand-200 hover:shadow-2xl transition-all duration-300 text-center flex flex-col">
-                    <h3 class="font-hindi text-2xl font-bold text-gray-500 mb-1">सिल्वर (Silver)</h3>
-                    <p class="font-hindi text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">छोटे बिजनेस
-                        के लिए</p>
+                <!-- Silver -->
+                <div data-aos="fade-up" data-aos-delay="100" class="group bg-white rounded-[2.5rem] p-10 border border-orange-100
+        shadow-[0_10px_40px_rgba(249,115,22,0.12)]
+        hover:shadow-[0_20px_60px_rgba(249,115,22,0.25)]
+        transition-all duration-500 hover:-translate-y-4">
 
-                    <div class="mb-8">
-                        <span class="text-2xl font-bold text-gray-400">₹</span>
-                        <span class="text-5xl font-black text-brand-600">499</span>
-                        <span class="text-gray-400 font-medium">/महीना</span>
-                    </div>
-
-                    <ul class="text-left space-y-4 font-hindi text-gray-600 mb-10 flex-grow">
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i>
-                            1 पेज डिजिटल कार्ड</li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i>
-                            क्लिक-टू-कॉल बटन</li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i>
-                            गूगल मैप लोकेशन</li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i>
-                            बेसिक व्हाट्सएप चैट</li>
-                    </ul>
-
-                    <a href="https://wa.me/919404359821?text=नमस्ते, मुझे सिल्वर प्लान के बारे में जानना है"
-                        class="block w-full py-4 border-2 border-brand-600 text-brand-600 font-hindi font-bold rounded-2xl hover:bg-brand-600 hover:text-white transition-all transform active:scale-95">
-                        सिल्वर चुनें
-                    </a>
+                    <h3 class="font-hindi text-2xl font-bold text-gray-500 mb-4">Silver</h3>
+                    <p class="text-5xl font-black text-orange-600 mb-4">₹499</p>
+                    <p class="font-hindi text-gray-600 mb-6">
+                        1 पेज डिजिटल कार्ड वेबसाइट
+                    </p>
                 </div>
 
-                <div
-                    class="relative bg-gradient-to-b from-brand-600 to-brand-800 p-8 rounded-[2rem] shadow-2xl shadow-brand-200 transform md:scale-110 text-center z-10 flex flex-col text-white">
-                    <div
-                        class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-yellow-400 text-brand-900 px-6 py-1.5 rounded-full text-xs font-black uppercase tracking-tighter shadow-xl">
-                        सबसे ज्यादा बिकने वाला 🔥
+                <!-- Gold (Highlight) -->
+                <div data-aos="fade-up" data-aos-delay="250" class="group bg-gradient-to-b from-orange-500 to-orange-600
+        text-white rounded-[2.5rem] p-10
+        shadow-[0_20px_70px_rgba(249,115,22,0.45)]
+        transform md:scale-110
+        transition-all duration-500 hover:-translate-y-4 relative">
+
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2
+          bg-white text-orange-600 text-xs font-bold px-4 py-1 rounded-full shadow">
+                        MOST POPULAR
                     </div>
 
-                    <h3 class="font-hindi text-3xl font-bold mb-1">गोल्ड (Gold)</h3>
-                    <p class="font-hindi text-sm font-semibold text-brand-200 uppercase tracking-widest mb-6">दुकान /
-                        शोरूम के लिए</p>
-
-                    <div class="mb-8">
-                        <span class="text-2xl font-bold text-brand-200">₹</span>
-                        <span class="text-6xl font-black text-white">999</span>
-                        <span class="text-brand-200 font-medium">/महीना</span>
-                    </div>
-
-                    <ul class="text-left space-y-4 font-hindi text-white mb-10 flex-grow">
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-yellow-400 mt-1"></i>
-                            <strong>5 पेज</strong> की शानदार वेबसाइट
-                        </li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-yellow-400 mt-1"></i>
-                            प्रोडक्ट फोटो गैलरी</li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-yellow-400 mt-1"></i>
-                            <strong>फ्री</strong> .in डोमेन नेम
-                        </li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-yellow-400 mt-1"></i>
-                            प्रीमियम व्हाट्सएप बटन</li>
-                    </ul>
-
-                    <a href="https://wa.me/919404359821?text=नमस्ते, मुझे गोल्ड प्लान चाहिए"
-                        class="block w-full py-4 bg-white text-brand-700 font-hindi font-bold rounded-2xl hover:bg-yellow-400 hover:text-brand-900 shadow-xl transition-all transform active:scale-95 text-xl">
-                        गोल्ड प्लान लें
-                    </a>
+                    <h3 class="font-hindi text-2xl font-bold mb-4 mt-2">Gold ⭐</h3>
+                    <p class="text-5xl font-black mb-4">₹999</p>
+                    <p class="font-hindi mb-6">
+                        5 पेज बिजनेस वेबसाइट + गूगल मैप
+                    </p>
                 </div>
 
-                <div
-                    class="group border-2 border-gray-100 p-8 rounded-[2rem] hover:border-brand-200 hover:shadow-2xl transition-all duration-300 text-center flex flex-col">
-                    <h3 class="font-hindi text-2xl font-bold text-gray-500 mb-1">प्लेटिनम (Platinum)</h3>
-                    <p class="font-hindi text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">कैटलॉग /
-                        मेनू के लिए</p>
+                <!-- Platinum -->
+                <div data-aos="fade-up" data-aos-delay="400" class="group bg-white rounded-[2.5rem] p-10 border border-orange-100
+        shadow-[0_10px_40px_rgba(249,115,22,0.12)]
+        hover:shadow-[0_20px_60px_rgba(249,115,22,0.25)]
+        transition-all duration-500 hover:-translate-y-4">
 
-                    <div class="mb-8">
-                        <span class="text-2xl font-bold text-gray-400">₹</span>
-                        <span class="text-5xl font-black text-brand-600">1999</span>
-                        <span class="text-gray-400 font-medium">/महीना</span>
-                    </div>
-
-                    <ul class="text-left space-y-4 font-hindi text-gray-600 mb-10 flex-grow">
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-blue-500 mt-1"></i>
-                            गोल्ड वाले सभी फीचर्स</li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-blue-500 mt-1"></i>
-                            <strong>गूगल शीट</strong> ऑटोमेशन
-                        </li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-blue-500 mt-1"></i>
-                            रोज़ाना रेट अपडेट की सुविधा</li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-blue-500 mt-1"></i>
-                            अनलिमिटेड प्रोडक्ट्स लिस्टिंग</li>
-                    </ul>
-
-                    <a href="https://wa.me/919404359821?text=नमस्ते, मुझे प्लेटिनम प्लान के बारे में बताएं"
-                        class="block w-full py-4 border-2 border-brand-600 text-brand-600 font-hindi font-bold rounded-2xl hover:bg-brand-600 hover:text-white transition-all transform active:scale-95">
-                        प्लेटिनम चुनें
-                    </a>
+                    <h3 class="font-hindi text-2xl font-bold text-gray-500 mb-4">Platinum</h3>
+                    <p class="text-5xl font-black text-orange-600 mb-4">₹1999</p>
+                    <p class="font-hindi text-gray-600 mb-6">
+                        खुद रेट अपडेट करने वाली वेबसाइट
+                    </p>
                 </div>
 
             </div>
+
+            <!-- Button -->
+            <div class="mt-16" data-aos="zoom-in">
+                <a href="plans.html" class="inline-flex items-center gap-2
+        bg-orange-600 text-white font-bold px-12 py-4 rounded-full
+        shadow-xl transition-all duration-300
+        hover:bg-orange-700 hover:-translate-y-1">
+
+                    पूरे प्लान्स देखें
+                    <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                </a>
+            </div>
+
         </div>
     </section>
 
-    <section class="relative bg-gray-900 text-white py-20 text-center px-4 overflow-hidden">
+
+    <section class="relative bg-gray-900 text-white py-24 text-center px-4 overflow-hidden">
+
+        <!-- Soft animated glows -->
         <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-0 left-1/4 w-64 h-64 bg-brand-600 rounded-full blur-[120px]"></div>
-            <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-orange-600 rounded-full blur-[120px]"></div>
+            <div
+                class="absolute top-0 left-1/4 w-72 h-72 bg-orange-500 rounded-full blur-[140px] animate-[float_10s_ease-in-out_infinite]">
+            </div>
+            <div
+                class="absolute bottom-0 right-1/4 w-72 h-72 bg-yellow-400 rounded-full blur-[140px] animate-[float_12s_ease-in-out_infinite]">
+            </div>
         </div>
 
         <div class="max-w-4xl mx-auto relative z-10">
-            <h2 class="font-hindi text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
-                आज बनेगी, आज ही <span class="text-green-400">लाइव</span> होगी!
+
+            <!-- Heading -->
+            <h2 data-aos="fade-up" class="font-hindi text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+                फ्री डेमो चाहिए तो <span class="text-green-400">यहाँ मैसेज करें</span>
             </h2>
-            <p class="font-hindi text-xl md:text-2xl mb-10 text-gray-300">
-                देर किस बात की? अपनी दुकान का <span class="text-white font-bold border-b-2 border-yellow-400">फ्री
-                    डेमो</span> देखने में सिर्फ 2 मिनट लगेंगे।
+
+            <!-- Sub text -->
+            <p data-aos="fade-up" data-aos-delay="150" class="font-hindi text-xl md:text-2xl mb-10 text-gray-300">
+                हमारी टीम आपकी दुकान का डेमो
+                <span class="text-white font-bold border-b-2 border-yellow-400">24 घंटे के अंदर</span>
+                तैयार करके दिखाएगी।
             </p>
 
-            <div class="flex flex-col items-center gap-4">
-                <a href="https://wa.me/919404359821?text=नमस्ते, मुझे अपनी दुकान का फ्री डेमो देखना है"
-                    class="group relative inline-flex items-center justify-center bg-[#25D366] text-white font-hindi font-bold text-2xl px-12 py-5 rounded-2xl shadow-[0_20px_50px_rgba(37,211,102,0.3)] hover:bg-[#128C7E] transition-all transform hover:scale-105 active:scale-95">
-                    <i class="fa-brands fa-whatsapp text-3xl mr-3"></i>
-                    फ्री डेमो दिखाओ
+            <!-- CTA -->
+            <div data-aos="zoom-in" data-aos-delay="300" class="flex flex-col items-center gap-5">
+
+                <a href="https://wa.me/919404359821?text=नमस्ते, मुझे अपनी दुकान का फ्री डेमो देखना है" class="group inline-flex items-center justify-center gap-4
+        bg-[#25D366] text-white font-bold text-xl md:text-2xl
+        px-12 py-5 rounded-2xl
+        shadow-[0_20px_60px_rgba(37,211,102,0.35)]
+        transition-all duration-300
+        hover:-translate-y-1 hover:bg-orange-600">
+
+                    <i class="fa-brands fa-whatsapp text-3xl transition-transform group-hover:scale-110"></i>
+                    फ्री डेमो के लिए मैसेज करें
                 </a>
+
                 <p class="text-gray-500 text-sm font-hindi">
-                    <i class="fa-solid fa-lock mr-1"></i> कोई क्रेडिट कार्ड या एडवांस की ज़रूरत नहीं
+                    <i class="fa-solid fa-lock mr-1"></i>
+                    कोई क्रेडिट कार्ड या एडवांस की ज़रूरत नहीं
                 </p>
+
             </div>
         </div>
     </section>
 
-    <footer class="bg-black text-gray-500 py-16 border-t border-gray-900">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-12 text-center md:text-left items-start">
 
-                <div class="space-y-4">
-                    <div class="font-hindi text-3xl font-black text-white">दुकानडिजिटल</div>
+    <footer class="relative bg-black text-gray-400 py-20 overflow-hidden">
+
+        <!-- Soft glow background -->
+        <div class="absolute -top-20 -left-20 w-72 h-72 bg-orange-600/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 right-0 w-72 h-72 bg-yellow-500/20 rounded-full blur-[120px]"></div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+            <div class="grid md:grid-cols-3 gap-14 text-center md:text-left">
+
+                <!-- Brand -->
+                <div class="space-y-5">
+                    <div class="font-hindi text-3xl font-black text-white">
+                        दुकानडिजिटल
+                    </div>
                     <p class="font-hindi text-lg leading-relaxed">
                         भारत के स्थानीय व्यापारियों को डिजिटल और शक्तिशाली बनाने का मिशन।
                     </p>
                 </div>
 
-                <div class="space-y-4">
+                <!-- Contact -->
+                <div class="space-y-5">
                     <h4 class="text-white font-bold uppercase tracking-widest text-sm">संपर्क करें</h4>
-                    <ul class="space-y-2 font-hindi">
-                        <li><i class="fa-solid fa-location-dot mr-2"></i> लक्ष्मी कॉलोनी, हड़पसर, पुणे</li>
-                        <li><i class="fa-solid fa-phone mr-2"></i> +91 94043 59821</li>
+                    <ul class="space-y-3 font-hindi text-lg">
+                        <li class="flex items-center justify-center md:justify-start gap-3">
+                            <i class="fa-brands fa-whatsapp text-green-500 text-xl"></i>
+                            <a href="https://wa.me/919404359821" class="hover:text-white transition">
+                                WhatsApp: +91 94043 59821
+                            </a>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-3">
+                            <i class="fa-solid fa-phone text-orange-500 text-xl"></i>
+                            <a href="tel:9404359821" class="hover:text-white transition">
+                                Call: +91 94043 59821
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
-                <div class="space-y-4 text-center md:text-right">
-                    <h4 class="text-white font-bold uppercase tracking-widest text-sm">सोशल मीडिया</h4>
-                    <div class="flex justify-center md:justify-end gap-4 text-2xl">
-                        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+                <!-- Quick Links -->
+                <div class="space-y-5 text-center md:text-right">
+                    <h4 class="text-white font-bold uppercase tracking-widest text-sm">Quick Links</h4>
+                    <div class="flex flex-col gap-3 font-hindi text-lg">
+                        <a href="plans.html" class="hover:text-white transition">प्लान्स देखें</a>
+                        <a href="privacy.html" class="hover:text-white transition">Privacy Policy</a>
+                        <a href="Terms.html" class="hover:text-white transition">Terms of Service</a>
                     </div>
                 </div>
+
             </div>
 
-            <div
-                class="mt-16 pt-8 border-t border-gray-900 text-center flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm">© 2026 DukaanDigital | Made with ❤️ in Pune</p>
-                <div class="flex gap-6 text-xs uppercase tracking-widest">
-                    <a href="#" class="hover:text-white">Privacy Policy</a>
-                    <a href="#" class="hover:text-white">Terms of Service</a>
-                </div>
+            <!-- Bottom -->
+            <!-- Bottom -->
+            <div class="mt-16 pt-8 border-t border-gray-800 text-center space-y-4">
+
+                <p class="text-sm text-gray-500">
+                    © 2026 DukaanDigital • Crafted & Developed with ❤️ for local businesses
+                </p>
+
+                <p class="text-xs text-gray-600 font-hindi max-w-2xl mx-auto leading-relaxed">
+                    इस सेवा का उपयोग करके आप हमारे
+                    <a href="Terms.html" class="text-orange-500 hover:text-white underline transition">Terms &
+                        Conditions</a>
+                    और
+                    <a href="privacy.html" class="text-orange-500 hover:text-white underline transition">Privacy
+                        Policy</a>
+                    से सहमत होते हैं।
+                </p>
+
             </div>
+
+
         </div>
     </footer>
 
@@ -454,6 +662,54 @@
             मदद चाहिए? यहाँ क्लिक करें
         </span>
     </a>
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menuIcon');
+            const navbar = document.getElementById('navbar');
+
+            let isOpen = false;
+
+            // Mobile menu slide toggle
+            menuBtn?.addEventListener('click', () => {
+                isOpen = !isOpen;
+
+                if (isOpen) {
+                    mobileMenu.classList.remove('-translate-y-6', 'opacity-0', 'pointer-events-none');
+                    mobileMenu.classList.add('translate-y-0', 'opacity-100');
+                    menuIcon.classList.replace('fa-bars', 'fa-xmark');
+                } else {
+                    mobileMenu.classList.add('-translate-y-6', 'opacity-0', 'pointer-events-none');
+                    mobileMenu.classList.remove('translate-y-0', 'opacity-100');
+                    menuIcon.classList.replace('fa-xmark', 'fa-bars');
+                }
+            });
+
+            // Navbar shadow on scroll
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    navbar?.classList.add('shadow-lg', 'bg-white/80');
+                } else {
+                    navbar?.classList.remove('shadow-lg', 'bg-white/80');
+                }
+            });
+
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: true });
+    </script>
+
+
+
+
 </body>
 
 </html>
